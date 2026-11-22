@@ -1,15 +1,315 @@
-{% extends "base.html" %}{% block content %}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
 <section class="hero">
   <div class="container hero-grid">
-    <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> WEB · SOFTWARE · IT</div><h1>Technology that moves your <em>business forward.</em></h1><p class="hero-lead">We help South African small businesses look their best online, work smarter and make technology work for them.</p><div class="hero-actions"><a class="button button-gold" href="{{ url_for('quote') }}">Start a project <span>↗</span></a><a class="text-link light-link" href="{{ url_for('services') }}">Explore our services <span>→</span></a></div><div class="hero-note"><span class="note-rule"></span><span>Thoughtful digital solutions, made for the way you work.</span></div></div>
-    <div class="hero-art" aria-label="Abstract illustration of a website dashboard"><div class="three-hero-scene" aria-hidden="true"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-orbit orbit-three"></div><span class="hero-particle particle-one"></span><span class="hero-particle particle-two"></span><span class="hero-particle particle-three"></span><div class="art-panel"><div class="art-panel-top"><div class="art-dots"><i></i><i></i><i></i></div><span>YOUR BUSINESS, ONLINE</span></div><div class="art-screen"><div class="art-sidebar"><b></b><i></i><i></i><i></i><i></i></div><div class="art-content"><div class="art-kicker">A CLEARER WAY FORWARD</div><div class="art-heading"></div><div class="art-heading short"></div><div class="art-copy"></div><div class="art-copy shorter"></div><div class="art-button"></div><div class="art-cards"><i></i><i></i><i></i></div></div></div><div class="art-panel-footer"><span>Digital, by design.</span><span class="art-spark">✳</span></div></div><div class="art-badge"><span>01</span><b>Built around<br>your business</b></div><div class="art-seal"><span>PW</span><i>✳</i></div></div>
-  </div><div class="hero-bottom-line"></div>
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="eyebrow-line"></span> WEB · SOFTWARE · IT · DIGITAL</div>
+
+      <h1>Technology that moves your <em>business forward.</em></h1>
+
+      <p class="hero-lead">
+        We help South African small businesses build their online presence,
+        reach more customers, work smarter and make technology work for them.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-gold" href="{{ url_for('quote') }}">
+          Start a project <span>↗</span>
+        </a>
+        <a class="text-link light-link" href="{{ url_for('services') }}">
+          Explore our services <span>→</span>
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <span class="note-rule"></span>
+        <span>Thoughtful digital solutions, made for the way you work.</span>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-label="Abstract illustration of a website dashboard">
+      <div class="three-hero-scene" aria-hidden="true"></div>
+      <div class="art-orbit orbit-one"></div>
+      <div class="art-orbit orbit-two"></div>
+      <div class="art-orbit orbit-three"></div>
+
+      <span class="hero-particle particle-one"></span>
+      <span class="hero-particle particle-two"></span>
+      <span class="hero-particle particle-three"></span>
+
+      <div class="art-panel">
+        <div class="art-panel-top">
+          <div class="art-dots"><i></i><i></i><i></i></div>
+          <span>YOUR BUSINESS, ONLINE</span>
+        </div>
+
+        <div class="art-screen">
+          <div class="art-sidebar">
+            <b></b><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="art-content">
+            <div class="art-kicker">A CLEARER WAY FORWARD</div>
+            <div class="art-heading"></div>
+            <div class="art-heading short"></div>
+            <div class="art-copy"></div>
+            <div class="art-copy shorter"></div>
+            <div class="art-button"></div>
+            <div class="art-cards"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+
+        <div class="art-panel-footer">
+          <span>Digital, by design.</span>
+          <span class="art-spark">✳</span>
+        </div>
+      </div>
+
+      <div class="art-badge">
+        <span>01</span>
+        <b>Built around<br>your business</b>
+      </div>
+
+      <div class="art-seal">
+        <span>PW</span><i>✳</i>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom-line"></div>
 </section>
-<section class="trust-strip"><div class="container trust-inner"><span>MADE FOR THE PEOPLE BEHIND</span><div><b>LOCAL</b> BUSINESSES</div><i></i><div>GROWING <b>TEAMS</b></div><i></i><div>AMBITIOUS <b>IDEAS</b></div></div></section>
-<section class="section section-intro"><div class="container intro-grid"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> YOUR DIGITAL PARTNER</div><h2>Good technology should make business <em>feel simpler.</em></h2></div><div class="intro-text"><p>From your first professional website to a custom tool that takes the busywork off your plate, PrimeWeb Solutions brings design and technology together with your goals in mind.</p><a class="text-link" href="{{ url_for('about') }}">Get to know us <span>→</span></a></div></div></section>
-<section class="section services-preview"><div class="container"><div class="section-heading"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> WHAT WE DO</div><h2>Practical expertise.<br><em>Personal service.</em></h2></div><a class="text-link" href="{{ url_for('services') }}">See all services <span>→</span></a></div><div class="service-cards"><a class="service-card" href="{{ url_for('services') }}#websites"><div class="service-icon icon-browser"><span></span></div><span class="card-number">01 / WEB</span><h3>Website development</h3><p>Professional, responsive websites that make it easy for the right customers to find and choose you.</p><span class="card-arrow">↗</span></a><a class="service-card" href="{{ url_for('services') }}#applications"><div class="service-icon icon-app"><span></span><i></i></div><span class="card-number">02 / SOFTWARE</span><h3>Custom web applications</h3><p>Purpose-built tools to help your team manage bookings, stock, requests and day-to-day operations.</p><span class="card-arrow">↗</span></a><a class="service-card" href="{{ url_for('services') }}#support"><div class="service-icon icon-support"><span>✳</span></div><span class="card-number">03 / SUPPORT</span><h3>Maintenance &amp; IT support</h3><p>Reliable help with updates, troubleshooting, setup and keeping your technology in good shape.</p><span class="card-arrow">↗</span></a></div></div></section>
-<section class="section audience-section"><div class="container audience-grid"><div class="audience-copy"><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> ROOTED IN SOUTH AFRICA</div><h2>Big ambitions.<br><em>Local understanding.</em></h2><p>We work with the businesses that keep our communities moving—from landscaping teams and restaurants to shops, accommodation providers and local service professionals.</p><a class="text-link" href="{{ url_for('quote') }}">Let’s talk about your business <span>→</span></a></div><div class="audience-visual"><div class="audience-grid-lines"></div><div class="audience-center"><span class="audience-monogram">P<span>.</span></span><div>BUILT FOR<br><b>BUSINESS</b></div></div><div class="orbit-label label-one">LOCAL SERVICES <span>↗</span></div><div class="orbit-label label-two">HOSPITALITY <span>↗</span></div><div class="orbit-label label-three">RETAIL <span>↗</span></div><div class="orbit-label label-four">SMALL TEAMS <span>↗</span></div></div></div></section>
-<section class="section why-section"><div class="container why-grid"><div class="why-head"><div class="eyebrow"><span class="eyebrow-line"></span> THE PRIMEWEB APPROACH</div><h2>Built with purpose.<br><em>Delivered with care.</em></h2><p>Clear communication and the right-sized solution, from the first conversation to launch day.</p></div><div class="why-points"><article><span>01</span><div><h3>Designed around you</h3><p>Your business is unique. We listen first, then recommend a solution that fits your goals and budget.</p></div></article><article><span>02</span><div><h3>Clear from day one</h3><p>Understand the scope, starting costs and next steps before work begins. No jargon, no guesswork.</p></div></article><article><span>03</span><div><h3>Here for the long run</h3><p>Get ongoing maintenance and practical support as your business and its technology grow.</p></div></article></div></div></section>
-<section class="cta-band"><div class="container cta-inner"><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT CHAPTER STARTS HERE</div><h2>Let’s build something<br><em>that works for you.</em></h2></div><a class="button button-gold" href="{{ url_for('quote') }}">Request a quote <span>↗</span></a></div><div class="cta-decoration">P<span>.</span></div></section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="container trust-inner">
+    <span>MADE FOR THE PEOPLE BEHIND</span>
+    <div><b>LOCAL</b> BUSINESSES</div>
+    <i></i>
+    <div>GROWING <b>TEAMS</b></div>
+    <i></i>
+    <div>AMBITIOUS <b>IDEAS</b></div>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section section-intro">
+  <div class="container intro-grid">
+    <div>
+      <div class="eyebrow eyebrow-blue">
+        <span class="eyebrow-line"></span> YOUR DIGITAL PARTNER
+      </div>
+      <h2>Good technology should make business <em>feel simpler.</em></h2>
+    </div>
+
+    <div class="intro-text">
+      <p>
+        From your first professional website to digital marketing,
+        creative content and AI-powered automation, PrimeWeb Solutions
+        brings design and technology together with your goals in mind.
+      </p>
+      <a class="text-link" href="{{ url_for('about') }}">
+        Get to know us <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section services-preview">
+  <div class="container">
+
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow eyebrow-blue">
+          <span class="eyebrow-line"></span> WHAT WE DO
+        </div>
+        <h2>Practical expertise.<br><em>Personal service.</em></h2>
+      </div>
+
+      <a class="text-link" href="{{ url_for('services') }}">
+        See all services <span>→</span>
+      </a>
+    </div>
+
+    <div class="service-cards">
+
+      <!-- 01 WEBSITE DEVELOPMENT -->
+      <a class="service-card" href="{{ url_for('services') }}#websites">
+        <div class="service-icon icon-browser"><span></span></div>
+        <span class="card-number">01 / WEB</span>
+        <h3>Website development</h3>
+        <p>Professional, responsive websites that make it easy for the right customers to find and choose you.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+      <!-- 02 WEB APPLICATIONS -->
+      <a class="service-card" href="{{ url_for('services') }}#applications">
+        <div class="service-icon icon-app"><span></span><i></i></div>
+        <span class="card-number">02 / SOFTWARE</span>
+        <h3>Custom web applications</h3>
+        <p>Purpose-built tools to help your team manage bookings, stock, requests and day-to-day operations.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+      <!-- 03 MAINTENANCE AND IT SUPPORT -->
+      <a class="service-card" href="{{ url_for('services') }}#support">
+        <div class="service-icon icon-support"><span>✳</span></div>
+        <span class="card-number">03 / SUPPORT</span>
+        <h3>Maintenance &amp; IT support</h3>
+        <p>Reliable help with updates, troubleshooting, setup and keeping your technology in good shape.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+      <!-- 04 IT CONSULTATION -->
+      <a class="service-card" href="{{ url_for('services') }}#consultation">
+        <div class="service-icon icon-support"><span>✳</span></div>
+        <span class="card-number">04 / CONSULTATION</span>
+        <h3>IT support &amp; consultation</h3>
+        <p>Get practical guidance with computer setup, system updates, networking, websites and everyday technical problems.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+      <!-- 05 DIGITAL MARKETING -->
+      <a class="service-card" href="{{ url_for('services') }}#marketing">
+        <div class="service-icon icon-browser"><span></span></div>
+        <span class="card-number">05 / MARKETING</span>
+        <h3>Digital marketing</h3>
+        <p>Help more people discover your business through online promotion, social media content and digital campaigns.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+      <!-- 06 VIDEO EDITING AND CONTENT -->
+      <a class="service-card" href="{{ url_for('services') }}#video-content">
+        <div class="service-icon icon-app"><span></span><i></i></div>
+        <span class="card-number">06 / CREATIVE</span>
+        <h3>Video editing &amp; content</h3>
+        <p>Transform your photos and video clips into engaging content for social media, your brand and your projects.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+      <!-- 07 AI AND AUTOMATION -->
+      <a class="service-card" href="{{ url_for('services') }}#automation">
+        <div class="service-icon icon-support"><span>✳</span></div>
+        <span class="card-number">07 / AI &amp; AUTOMATION</span>
+        <h3>AI &amp; automation</h3>
+        <p>Explore AI tools and simple automated workflows that reduce repetitive tasks and make everyday work easier.</p>
+        <span class="card-arrow">↗</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- TARGET AUDIENCE -->
+<section class="section audience-section">
+  <div class="container audience-grid">
+
+    <div class="audience-copy">
+      <div class="eyebrow eyebrow-blue">
+        <span class="eyebrow-line"></span> ROOTED IN SOUTH AFRICA
+      </div>
+
+      <h2>Big ambitions.<br><em>Local understanding.</em></h2>
+
+      <p>
+        We work with the businesses that keep our communities moving—from
+        landscaping teams and restaurants to shops, accommodation providers
+        and local service professionals.
+      </p>
+
+      <a class="text-link" href="{{ url_for('quote') }}">
+        Let’s talk about your business <span>→</span>
+      </a>
+    </div>
+
+    <div class="audience-visual">
+      <div class="audience-grid-lines"></div>
+
+      <div class="audience-center">
+        <span class="audience-monogram">P<span>.</span></span>
+        <div>BUILT FOR<br><b>BUSINESS</b></div>
+      </div>
+
+      <div class="orbit-label label-one">LOCAL SERVICES <span>↗</span></div>
+      <div class="orbit-label label-two">HOSPITALITY <span>↗</span></div>
+      <div class="orbit-label label-three">RETAIL <span>↗</span></div>
+      <div class="orbit-label label-four">SMALL TEAMS <span>↗</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY PRIMEWEB -->
+<section class="section why-section">
+  <div class="container why-grid">
+
+    <div class="why-head">
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> THE PRIMEWEB APPROACH
+      </div>
+
+      <h2>Built with purpose.<br><em>Delivered with care.</em></h2>
+
+      <p>
+        Clear communication and the right-sized solution,
+        from the first conversation to launch day.
+      </p>
+    </div>
+
+    <div class="why-points">
+
+      <article>
+        <span>01</span>
+        <div>
+          <h3>Designed around you</h3>
+          <p>Your business is unique. We listen first, then recommend a solution that fits your goals and budget.</p>
+        </div>
+      </article>
+
+      <article>
+        <span>02</span>
+        <div>
+          <h3>Clear from day one</h3>
+          <p>Understand the scope, starting costs and next steps before work begins. No jargon, no guesswork.</p>
+        </div>
+      </article>
+
+      <article>
+        <span>03</span>
+        <div>
+          <h3>Here for the long run</h3>
+          <p>Get ongoing maintenance and practical support as your business and its technology grow.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> YOUR NEXT CHAPTER STARTS HERE
+      </div>
+
+      <h2>Let’s build something<br><em>that works for you.</em></h2>
+    </div>
+
+    <a class="button button-gold" href="{{ url_for('quote') }}">
+      Request a quote <span>↗</span>
+    </a>
+  </div>
+
+  <div class="cta-decoration">P<span>.</span></div>
+</section>
+
 {% endblock %}
-{% block scripts %}<script type="module" src="{{ url_for('static', filename='js/three-hero.js') }}"></script>{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ url_for('static', filename='js/three-hero.js') }}"></script>
+{% endblock %}
