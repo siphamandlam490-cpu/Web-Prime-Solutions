@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title">
+  <title id="title">PrimeWeb Solutions mark</title>
+  <defs>
+    <linearGradient id="edge" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58E2FF"/>
+      <stop offset="1" stop-color="#8B7CFF"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4.5 54 13v17.4c0 13.7-8.5 23.7-22 29.1C18.5 54.1 10 44.1 10 30.4V13L32 4.5Z" stroke="url(#edge)" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M23 43V21h10.2a7.1 7.1 0 0 1 0 14.2H23" stroke="#E8F8FF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m34 35.2 8 7.8" stroke="#58E2FF" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="44" cy="44" r="3.2" fill="#8B7CFF"/>
+  <circle cx="20" cy="17" r="1.5" fill="#58E2FF"/>
+  <circle cx="44" cy="17" r="1.5" fill="#8B7CFF"/>
+</svg>

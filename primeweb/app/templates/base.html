@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B1F3A">
+  <meta name="description" content="Professional websites, custom web applications and practical IT support for South African small businesses.">
+  <title>{{ title }} | PrimeWeb Solutions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+  <script src="{{ url_for('static', filename='js/site.js') }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="topline"><div class="container topline-inner"><span>Digital solutions for South African businesses</span><a href="{{ url_for('quote') }}">Tell us about your project <span aria-hidden="true">↗</span></a></div></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="PrimeWeb Solutions home"><img class="brand-mark" src="{{ url_for('static', filename='img/primeweb-mark.svg') }}" alt=""><span class="brand-name">PrimeWeb <small>Solutions</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span class="visually-hidden">Toggle navigation</span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="{{ url_for('home') }}">Home</a><a href="{{ url_for('about') }}">About</a><a href="{{ url_for('services') }}">Services</a><a href="{{ url_for('pricing') }}">Pricing</a><a href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a class="nav-contact" href="{{ url_for('contact') }}">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  {% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="container flash-stack" aria-live="polite">{% for category, message in messages %}<div class="flash flash-{{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand"><a class="brand brand-light" href="{{ url_for('home') }}"><img class="brand-mark" src="{{ url_for('static', filename='img/primeweb-mark.svg') }}" alt=""><span class="brand-name">PrimeWeb <small>Solutions</small></span></a><p>Digital solutions. Built for growth.</p></div>
+      <div><h3>Explore</h3><a href="{{ url_for('about') }}">About us</a><a href="{{ url_for('services') }}">Services</a><a href="{{ url_for('pricing') }}">Pricing</a><a href="{{ url_for('portfolio') }}">Portfolio</a></div>
+      <div><h3>Services</h3><a href="{{ url_for('services') }}#websites">Website development</a><a href="{{ url_for('services') }}#applications">Web applications</a><a href="{{ url_for('services') }}#support">IT support</a></div>
+      <div class="footer-cta"><h3>Have a project in mind?</h3><p>Let’s find the right solution for your business.</p><a class="button button-gold button-small" href="{{ url_for('quote') }}">Request a quote <span>↗</span></a></div>
+    </div>
+    <div class="container footer-bottom"><span>© {{ year }} PrimeWeb Solutions</span><span>South Africa · Built for small business</span></div>
+  </footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>
