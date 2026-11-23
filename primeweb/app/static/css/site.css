@@ -146,3 +146,77 @@ body{background:#FFFFFF;color:#142D4E}
 .orbit-two{border-color:rgba(23,105,170,.24);border-top-color:rgba(23,105,170,.82)}
 .orbit-two::after{background:#1769AA;box-shadow:0 0 14px 4px rgba(23,105,170,.38)}
 .particle-two{background:#1769AA;box-shadow:0 0 14px 4px rgba(23,105,170,.42)}
+
+
+/* ==============================
+   FREQUENTLY ASKED QUESTIONS
+============================== */
+
+.faq-section {
+  background: #F1F7FC;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.faq-heading h2 {
+  margin: 20px 0;
+}
+
+.faq-heading p {
+  line-height: 1.8;
+  color: #52677F;
+  margin-bottom: 25px;
+}
+
+.faq-list {
+  border-top: 1px solid rgba(11, 31, 58, 0.15);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(11, 31, 58, 0.15);
+  padding: 22px 0;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: #0B1F3A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 24px;
+  color: #1769AA;
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  color: #52677F;
+  line-height: 1.8;
+  margin: 15px 30px 0 0;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
