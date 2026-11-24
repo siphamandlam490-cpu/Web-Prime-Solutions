@@ -220,3 +220,252 @@ body{background:#FFFFFF;color:#142D4E}
     gap: 35px;
   }
 }
+
+
+/* ==============================
+   ADMIN DASHBOARD
+============================== */
+
+.admin-wrap {
+  padding-top: 55px;
+  padding-bottom: 80px;
+  min-height: 70vh;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.admin-header h1 {
+  color: #0B1F3A;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 12px 0 5px;
+}
+
+.admin-header p,
+.admin-section-heading p {
+  color: #647890;
+  margin: 0;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 20px;
+  background: #EAF4FC;
+  border: 1px solid #D5E8F7;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.admin-info p {
+  color: #315575;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.admin-info-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #1769AA;
+  color: white;
+  font-weight: 700;
+}
+
+.admin-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.admin-stat {
+  padding: 23px;
+  background: #FFFFFF;
+  border: 1px solid #E0EAF3;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(11, 31, 58, 0.04);
+}
+
+.admin-stat span {
+  display: block;
+  color: #647890;
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+}
+
+.admin-stat strong {
+  display: block;
+  color: #0B1F3A;
+  font-size: 1.8rem;
+}
+
+.admin-section-heading {
+  margin-bottom: 18px;
+}
+
+.admin-section-heading h2 {
+  color: #0B1F3A;
+  font-size: 1.4rem;
+  margin-bottom: 7px;
+}
+
+.admin-section-heading p {
+  font-size: 0.9rem;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  background: #FFFFFF;
+  border: 1px solid #E0EAF3;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(11, 31, 58, 0.04);
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  padding: 17px 18px;
+  background: #F1F7FC;
+  color: #315575;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.admin-table td {
+  padding: 20px 18px;
+  border-top: 1px solid #EAF0F5;
+  color: #40566F;
+  font-size: 0.88rem;
+  vertical-align: top;
+}
+
+.admin-table tbody tr:hover {
+  background: #FAFCFE;
+}
+
+.admin-date {
+  white-space: nowrap;
+}
+
+.admin-customer strong,
+.admin-service strong {
+  display: block;
+  color: #0B1F3A;
+  margin-bottom: 7px;
+}
+
+.admin-customer span,
+.admin-service span {
+  display: block;
+  color: #647890;
+  margin-bottom: 5px;
+}
+
+.admin-customer a {
+  display: block;
+  color: #1769AA;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.admin-customer a:hover {
+  text-decoration: underline;
+}
+
+.admin-message {
+  min-width: 220px;
+  max-width: 330px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.admin-status-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 125px;
+}
+
+.admin-status-form select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #D5E1EC;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #0B1F3A;
+}
+
+.admin-update-btn {
+  padding: 9px 13px;
+  background: #1769AA;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-update-btn:hover {
+  background: #0B1F3A;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 65px 25px;
+  background: #FFFFFF;
+  border: 1px solid #E0EAF3;
+  border-radius: 12px;
+}
+
+.empty-state-icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.empty-state h3 {
+  color: #0B1F3A;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: #647890;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: auto;
+}
+
+@media (max-width: 650px) {
+  .admin-wrap {
+    padding-top: 35px;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+  }
+
+  .admin-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header .button {
+    white-space: nowrap;
+  }
+}

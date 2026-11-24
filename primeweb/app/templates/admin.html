@@ -1,4 +1,142 @@
-{% extends "base.html" %}{% block content %}
-<section class="container admin-wrap"><div class="admin-header"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> PRIMEWEB ADMIN</div><h1>Enquiries</h1></div><form method="post" action="{{ url_for('admin_logout') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="button button-navy button-small" type="submit">Sign out</button></form></div><div class="admin-info">Enquiries are stored in the local SQLite database. Keep access to this dashboard restricted to authorised administrators.</div>
-{% if enquiries %}<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Received</th><th>Customer</th><th>Service</th><th>Project details</th><th>Status</th></tr></thead><tbody>{% for enquiry in enquiries %}<tr><td>{{ enquiry.created_at[:10] }}</td><td><b>{{ enquiry.name }}</b>{% if enquiry.business %}<br>{{ enquiry.business }}{% endif %}<br><a href="mailto:{{ enquiry.email }}">{{ enquiry.email }}</a>{% if enquiry.phone %}<br>{{ enquiry.phone }}{% endif %}</td><td>{{ enquiry.service }}{% if enquiry.budget %}<br>Budget: {{ enquiry.budget }}{% endif %}</td><td><p>{{ enquiry.message }}</p></td><td><form method="post" action="{{ url_for('update_status', enquiry_id=enquiry.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><select name="status" aria-label="Status for enquiry {{ enquiry.id }}">{% for status in statuses %}<option value="{{ status }}" {% if enquiry.status == status %}selected{% endif %}>{{ status }}</option>{% endfor %}</select><button type="submit">Update</button></form></td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty-state">No enquiries yet. New contact and quote requests will appear here.</div>{% endif %}</section>
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container admin-wrap">
+
+  <!-- ADMIN HEADER -->
+  <div class="admin-header">
+    <div>
+      <div class="eyebrow eyebrow-blue">
+        <span class="eyebrow-line"></span>
+        PRIMEWEB ADMIN
+      </div>
+      <h1>Enquiries</h1>
+      <p>Manage and review customer enquiries.</p>
+    </div>
+
+    <form method="post" action="{{ url_for('admin_logout') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+      <button class="button button-navy button-small" type="submit">
+        Sign out
+      </button>
+    </form>
+  </div>
+
+  <!-- ADMIN INFORMATION -->
+  <div class="admin-info">
+    <span class="admin-info-icon">i</span>
+    <p>
+      Enquiries are stored in your local SQLite database.
+      Keep this dashboard restricted to authorised administrators.
+    </p>
+  </div>
+
+  <!-- ENQUIRY SUMMARY -->
+  <div class="admin-summary">
+    <div class="admin-stat">
+      <span>Total enquiries</span>
+      <strong>{{ enquiries|length }}</strong>
+    </div>
+    <div class="admin-stat">
+      <span>Dashboard</span>
+      <strong>Overview</strong>
+    </div>
+  </div>
+
+  <!-- ENQUIRIES -->
+  <div class="admin-section-heading">
+    <div>
+      <h2>Customer enquiries</h2>
+      <p>Review customer details and update enquiry statuses.</p>
+    </div>
+  </div>
+
+  {% if enquiries %}
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Received</th>
+          <th>Customer</th>
+          <th>Service</th>
+          <th>Project details</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for enquiry in enquiries %}
+        <tr>
+          <td class="admin-date">
+            {{ enquiry.created_at[:10] }}
+          </td>
+
+          <td class="admin-customer">
+            <strong>{{ enquiry.name }}</strong>
+
+            {% if enquiry.business %}
+              <span>{{ enquiry.business }}</span>
+            {% endif %}
+
+            <a href="mailto:{{ enquiry.email }}">
+              {{ enquiry.email }}
+            </a>
+
+            {% if enquiry.phone %}
+              <span>{{ enquiry.phone }}</span>
+            {% endif %}
+          </td>
+
+          <td class="admin-service">
+            <strong>{{ enquiry.service }}</strong>
+
+            {% if enquiry.budget %}
+              <span>Budget: {{ enquiry.budget }}</span>
+            {% endif %}
+          </td>
+
+          <td class="admin-message">
+            {{ enquiry.message }}
+          </td>
+
+          <td>
+            <form class="admin-status-form"
+                  method="post"
+                  action="{{ url_for('update_status', enquiry_id=enquiry.id) }}">
+
+              <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+              <select name="status"
+                      aria-label="Status for enquiry {{ enquiry.id }}">
+                {% for status in statuses %}
+                  <option value="{{ status }}"
+                    {% if enquiry.status == status %}selected{% endif %}>
+                    {{ status }}
+                  </option>
+                {% endfor %}
+              </select>
+
+              <button type="submit" class="admin-update-btn">
+                Update
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% else %}
+  <div class="empty-state">
+    <div class="empty-state-icon">✉</div>
+    <h3>No enquiries yet</h3>
+    <p>
+      New contact and quote requests will appear here
+      when customers submit an enquiry.
+    </p>
+  </div>
+  {% endif %}
+
+</section>
 {% endblock %}

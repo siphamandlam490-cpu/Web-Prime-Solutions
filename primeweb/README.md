@@ -40,3 +40,118 @@ When running behind HTTPS, set `PRIMEWEB_HTTPS=1` so the session cookie is marke
 Prices are starting estimates supplied in the project brief. Confirm exact scope, third-party fees and any applicable VAT in each quotation. This app is a local starting point; configure production hosting, HTTPS, backups and operational monitoring before accepting live customer information.
 
 The homepage 3D effect needs a WebGL-capable browser and an internet connection to load the pinned Three.js module from jsDelivr. The Flask app does not require Node.js or npm to serve it.
+
+
+## Administrator Setup (Local Development)
+
+PrimeWeb includes a password-protected administrator dashboard for viewing customer enquiries and updating their statuses.
+
+### 1. Install project dependencies
+
+Clone the repository and open the project folder:
+
+```bash
+git clone YOUR_REPOSITORY_URL
+cd primeweb
+```
+
+Create and activate a virtual environment:
+
+**Windows:**
+```powershell
+python -m venv env
+.\env\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Make sure `python-dotenv` is included in `requirements.txt`.
+
+### 2. Configure environment variables
+
+Create a `.env` file in the project root, alongside `run.py`.
+
+Generate a Flask secret key:
+
+```bash
+python -c "import secrets; print(secrets.token_hex(32))"
+```
+
+Generate an administrator password hash:
+
+```bash
+python -c "from werkzeug.security import generate_password_hash; print(generate_password_hash(input('Enter admin password: ')))"
+```
+
+Add the generated values to `.env`:
+
+```env
+PRIMEWEB_SECRET_KEY=your_generated_secret_key
+PRIMEWEB_ADMIN_PASSWORD_HASH=your_generated_password_hash
+```
+
+Do not include quotation marks around the values.
+
+**Security:** Never commit `.env` to GitHub. Each developer should configure their own local secret key and administrator password hash.
+
+### 3. Start the application
+
+Run:
+
+```bash
+python run.py
+```
+
+Open the website:
+
+- Website: `http://127.0.0.1:5000`
+- Admin login: `http://127.0.0.1:5000/admin/login`
+- Admin dashboard: `http://127.0.0.1:5000/admin`
+
+Sign in using the password used when generating your password hash.
+
+### 4. Admin dashboard functionality
+
+The administrator can:
+
+- View customer contact enquiries and quote requests.
+- View customer names, email addresses and project details.
+- Review requested services and budgets.
+- Update enquiry statuses.
+
+Available enquiry statuses:
+
+1. New
+2. Contacted
+3. Quotation Sent
+4. Approved
+5. In Progress
+6. Completed
+7. Declined
+
+### 5. Database
+
+Enquiries are stored in a local SQLite database:
+
+```text
+instance/primeweb.sqlite3
+```
+
+The database is automatically initialised when the Flask application starts.
+
+Each developer's local database is separate unless a shared database is configured.
+
+### 6. Important security notes
+
+- Keep `.env` private and excluded from Git.
+- Never commit administrator passwords, password hashes or secret keys.
+- Use HTTPS and secure cookie settings in production.
+- Configure production database backups and monitoring.
+- The initial application supports a configured administrator password hash, not a multi-user administrator management system.
+- Customer accounts, file uploads, quotation approval, invoicing and payments are not currently implemented.
+
+**Note:** The administrator configuration is required before the dashboard can be accessed.

@@ -1,8 +1,10 @@
 __pycache__/
 *.py[cod]
 .venv/
+env/
 .env
 instance/*.sqlite3
 instance/*.log
 uploads/*
 !uploads/.gitkeep
+.vscode/

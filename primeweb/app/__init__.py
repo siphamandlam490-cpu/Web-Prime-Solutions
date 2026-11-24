@@ -8,6 +8,10 @@ from pathlib import Path
 from flask import Flask, abort, flash, g, redirect, render_template, request, session, url_for
 from werkzeug.security import check_password_hash
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 STATUSES = ["New", "Contacted", "Quotation Sent", "Approved", "In Progress", "Completed", "Declined"]
 SERVICES = ["Website Development", "Custom Web Application", "Website Maintenance", "IT Support", "Not sure yet"]
