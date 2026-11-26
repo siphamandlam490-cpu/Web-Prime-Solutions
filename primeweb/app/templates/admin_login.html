@@ -1,3 +1,39 @@
-{% extends "base.html" %}{% block content %}
-<section class="container admin-wrap"><div class="admin-login"><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> PRIVATE AREA</div><h1 class="admin-header">Administrator sign in</h1><form class="inquiry-form" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="button button-navy" type="submit">Sign in <span>↗</span></button></form></div></section>
+
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container admin-wrap">
+
+    <div class="admin-login">
+
+        <div class="eyebrow eyebrow-blue">
+            <span class="eyebrow-line"></span>
+            PRIVATE AREA
+        </div>
+
+        <h1 class="admin-header">Administrator sign in</h1>
+
+        <form class="inquiry-form" method="post">
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+            <label>
+                Password
+                <input
+                    type="password"
+                    name="password"
+                    required
+                    autocomplete="current-password"
+                >
+            </label>
+
+            <button class="button button-navy" type="submit">
+                Sign in <span>↗</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 {% endblock %}

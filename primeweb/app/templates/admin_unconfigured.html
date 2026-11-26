@@ -1,3 +1,26 @@
-{% extends "base.html" %}{% block content %}
-<section class="container unconfigured"><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> ADMINISTRATOR SETUP</div><h1>The admin area is not configured yet.</h1><p>For security, administrator access stays disabled until you set a secret key and a password hash in the environment. Follow the setup steps in <code>README.md</code>, then restart the application.</p><a class="text-link" href="{{ url_for('home') }}">Return to the website <span>→</span></a></section>
+
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container unconfigured">
+
+    <div class="eyebrow eyebrow-blue">
+        <span class="eyebrow-line"></span>
+        ADMINISTRATOR SETUP
+    </div>
+
+    <h1>The admin area is not configured yet.</h1>
+
+    <p>
+        For security, administrator access stays disabled until
+        you set a secret key and a password hash in the environment.
+        Follow the setup steps in <code>README.md</code>, then restart
+        the application.
+    </p>
+
+    <a class="text-link" href="{{ url_for('home') }}">
+        Return to the website <span>→</span>
+    </a>
+
+</section>
 {% endblock %}

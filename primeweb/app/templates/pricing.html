@@ -1,8 +1,176 @@
-{% extends "base.html" %}{% block content %}
-<section class="page-hero"><div class="container"><div class="eyebrow"><span class="eyebrow-line"></span> PRICING</div><h1>Clear starting points.<br><em>Made to fit your scope.</em></h1><p>Upfront estimates to help you plan. Every final quote is tailored to your requirements.</p></div></section>
-<section class="section pricing-section"><div class="container"><div class="pricing-heading"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> WEBSITE DEVELOPMENT</div><h2>Websites</h2></div><p>Responsive, professional websites designed to help your business grow online.</p></div><div class="price-grid"><article class="price-card"><span class="price-label">A place to begin</span><h3>Starter Website</h3><div class="price">R1,800 <small>from</small></div><p>A focused online home for a new or growing business.</p><ul><li>Responsive design</li><li>Core business information</li><li>Contact route</li></ul><a class="text-link" href="{{ url_for('quote') }}">Discuss your project <span>→</span></a></article><article class="price-card price-featured"><span class="price-label">A little more room</span><h3>Business Website</h3><div class="price">R3,800 <small>from</small></div><p>A polished multi-page website for your services and story.</p><ul><li>Everything in Starter</li><li>Multiple content pages</li><li>Enquiry form</li><li>WhatsApp integration</li></ul><a class="text-link" href="{{ url_for('quote') }}">Discuss your project <span>→</span></a></article><article class="price-card"><span class="price-label">For growing needs</span><h3>Business Plus</h3><div class="price">R6,500 <small>from</small></div><p>More flexibility for businesses that need extra features.</p><ul><li>Everything in Business</li><li>Expanded content and design</li><li>Additional functionality</li></ul><a class="text-link" href="{{ url_for('quote') }}">Discuss your project <span>→</span></a></article></div>
-<div class="pricing-heading app-pricing-heading"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> WEB APPLICATIONS</div><h2>Custom systems</h2></div><p>Starting estimates for common tools. Final scope and functionality are agreed after discovery.</p></div><div class="rate-list"><div><span>Simple enquiry management</span><b>from R4,500</b></div><div><span>Basic booking system</span><b>from R6,500</b></div><div><span>Inventory management</span><b>from R8,500</b></div><div><span>Maintenance reporting system</span><b>from R9,500</b></div><div><span>Custom management system</span><b>from R12,000</b></div></div>
-<div class="pricing-heading app-pricing-heading"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> IT SUPPORT</div><h2>Support &amp; maintenance</h2></div><p>Practical technical help when you need a hand.</p></div><div class="rate-list"><div><span>Remote support</span><b>R200 / hour</b></div><div><span>On-site support</span><b>R300 / hour</b></div><div><span>Troubleshooting</span><b>from R250</b></div><div><span>Network configuration</span><b>from R450</b></div></div>
-<div class="pricing-heading app-pricing-heading"><div><div class="eyebrow eyebrow-blue"><span class="eyebrow-line"></span> WEBSITE CARE</div><h2>Maintenance plans</h2></div><p>Ongoing support to help keep your website current and cared for.</p></div><div class="care-grid"><div><span>01</span><h3>Basic Care</h3><b>R250<small> / month</small></b></div><div><span>02</span><h3>Business Care</h3><b>R450<small> / month</small></b></div><div><span>03</span><h3>Premium Care</h3><b>R750<small> / month</small></b></div></div><p class="pricing-note"><b>A note on estimates:</b> Prices are starting estimates in South African Rand. Your final quotation depends on scope, content, integrations and other project requirements. Hosting, domains, licences and third-party services are quoted separately where applicable. VAT, if applicable, will be stated in your quotation.</p></div></section>
-<section class="cta-band"><div class="container cta-inner"><div><div class="eyebrow"><span class="eyebrow-line"></span> LET’S WORK OUT THE DETAILS</div><h2>Get a quote for<br><em>your project.</em></h2></div><a class="button button-gold" href="{{ url_for('quote') }}">Tell us what you need <span>↗</span></a></div><div class="cta-decoration">P<span>.</span></div></section>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ALL SERVICES AND PRICING -->
+<div class="pricing-heading app-pricing-heading">
+    <div>
+        <div class="eyebrow eyebrow-blue">
+            <span class="eyebrow-line"></span>
+            OUR SERVICES
+        </div>
+        <h2>Explore our services</h2>
+    </div>
+
+    <p>
+        From digital presence to practical technology solutions,
+        explore how we can support your goals.
+    </p>
+</div>
+
+<div class="price-grid">
+
+    <article class="price-card">
+        <span class="price-label">01 / DIGITAL PRESENCE</span>
+        <h3>Website Development</h3>
+
+        <div class="price">
+            R1,800 <small>from</small>
+        </div>
+
+        <p>
+            Build or improve your online presence with
+            professional, responsive websites.
+        </p>
+
+        <ul>
+            <li>Business websites</li>
+            <li>Landing pages</li>
+            <li>Website redesigns</li>
+            <li>Website improvements</li>
+        </ul>
+
+        <a class="text-link" href="{{ url_for('quote') }}">
+            Discuss your project <span>→</span>
+        </a>
+    </article>
+
+    <article class="price-card price-featured">
+        <span class="price-label">02 / SOFTWARE SOLUTIONS</span>
+        <h3>Web Applications</h3>
+
+        <div class="price">
+            R4,500 <small>from</small>
+        </div>
+
+        <p>
+            Custom digital tools designed to simplify
+            business operations and everyday tasks.
+        </p>
+
+        <ul>
+            <li>Booking systems</li>
+            <li>Inventory management</li>
+            <li>Business dashboards</li>
+            <li>Custom management systems</li>
+        </ul>
+
+        <a class="text-link" href="{{ url_for('quote') }}">
+            Discuss your project <span>→</span>
+        </a>
+    </article>
+
+    <article class="price-card">
+        <span class="price-label">03 / TECHNICAL SERVICES</span>
+        <h3>IT Support & Consultation</h3>
+
+        <div class="price">
+            R200 <small>per hour from</small>
+        </div>
+
+        <p>
+            Practical technical assistance for individuals,
+            businesses and organisations.
+        </p>
+
+        <ul>
+            <li>Computer troubleshooting</li>
+            <li>Remote and on-site support</li>
+            <li>Network configuration</li>
+            <li>IT consultation</li>
+        </ul>
+
+        <a class="text-link" href="{{ url_for('quote') }}">
+            Discuss your needs <span>→</span>
+        </a>
+    </article>
+
+    <article class="price-card">
+        <span class="price-label">04 / ONGOING SUPPORT</span>
+        <h3>Maintenance & Support</h3>
+
+        <div class="price">
+            R250 <small>per month from</small>
+        </div>
+
+        <p>
+            Keep your digital platforms maintained,
+            updated and running smoothly.
+        </p>
+
+        <ul>
+            <li>Website updates</li>
+            <li>Website maintenance</li>
+            <li>Technical assistance</li>
+            <li>Ongoing support arrangements</li>
+        </ul>
+
+        <a class="text-link" href="{{ url_for('quote') }}">
+            Discuss your needs <span>→</span>
+        </a>
+    </article>
+
+    <article class="price-card">
+        <span class="price-label">05 / CREATIVE SERVICES</span>
+        <h3>Marketing & Content</h3>
+
+        <div class="price">
+            <small>Custom quotation</small>
+        </div>
+
+        <p>
+            Create engaging digital content and strengthen
+            your brand's online presence.
+        </p>
+
+        <ul>
+            <li>Digital marketing</li>
+            <li>Social media assistance</li>
+            <li>Video editing</li>
+            <li>Content creation</li>
+        </ul>
+
+        <a class="text-link" href="{{ url_for('quote') }}">
+            Discuss your project <span>→</span>
+        </a>
+    </article>
+
+    <article class="price-card">
+        <span class="price-label">06 / INTELLIGENT SOLUTIONS</span>
+        <h3>AI & Automation</h3>
+
+        <div class="price">
+            <small>Custom quotation</small>
+        </div>
+
+        <p>
+            Explore practical ways to use technology
+            to simplify tasks and improve workflows.
+        </p>
+
+        <ul>
+            <li>AI customer-service assistants</li>
+            <li>Business process automation</li>
+            <li>Workflow automation</li>
+            <li>System integrations</li>
+        </ul>
+
+        <a class="text-link" href="{{ url_for('quote') }}">
+            Discuss your project <span>→</span>
+        </a>
+    </article>
+
+</div>
+
 {% endblock %}
